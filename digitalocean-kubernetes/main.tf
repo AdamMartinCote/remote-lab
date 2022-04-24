@@ -10,11 +10,6 @@ resource "digitalocean_kubernetes_cluster" "lab-kubernetes-cluster" {
   }
 }
 
-resource "digitalocean_database_db" "django-database" {
-  cluster_id = digitalocean_database_cluster.lab-database-cluster.id
-  name       = "defaultdb"
-}
-
 resource "digitalocean_database_cluster" "lab-database-cluster" {
   name       = "django-kubernetes"
   engine     = "pg"
